@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ15</title>
+    <style>
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Сложение чисел</h1>
+    <input type="text" id="number1" placeholder="Введите первое число">
+    <input type="text" id="number2" placeholder="Введите второе число">
+    <button onclick="sum()" ondblclick="sum2()" id="addButton">Сложить</button>
+    <button ondblclick="sum2()" id="addButton1">Сложить</button>
+    <p id="textDisplay"></p>
+
+    <script>
+        function sum() {
+            const num1 = Number(document.getElementById('number1').value);
+            const num2 = Number(document.getElementById('number2').value);
+            const sum = num1 + num2;
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Ошибка: оба значения должны быть числами.");
+                return;
+            }
+            alert("Сумма: " + sum);
+        };
+
+        function sum2() {
+            const num1 = Number(document.getElementById('number1').value);
+            const num2 = Number(document.getElementById('number2').value);
+            const sum = num1 + num2;
+            const textSOS = `Кнопка вторая созданна!!
+                            Из-за того что, 
+                            Alert мешает выведению текста в кнопке, 
+                            но вывод реализован и на ту кнопку`
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Ошибка: оба значения должны быть числами.");
+                return;
+            }
+            addButton1.textContent = "Сумма: " + sum;
+            document.querySelector('#textDisplay').innerText = textSOS;
+        };
+    </script>
+
+</body>
+</html>
